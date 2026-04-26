@@ -1,0 +1,10 @@
+services:
+  gateway:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SAG_DATABASE_URL: sqlite:///./data/secure_agent_gateway.db
+      SAG_ADMIN_TOKEN: change-me-now
+    volumes:
+      - ./data:/app/data
